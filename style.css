@@ -1,0 +1,50 @@
+html {
+    scroll-behavior: smooth;
+}
+.brand-color {
+    color: rgb(255,144,63);
+}
+img {
+    height: 100%;
+    width: 100%;;
+    object-fit: cover;
+}
+.carousel-inner img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Replace with your desired ratio */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+body {
+    padding-top: 81.6px;
+}
+
+@media (min-width: 231px) {
+body {
+    padding-top: 66px;
+    }
+}
+
+
+@media (min-width: 360px) {
+    body {
+        padding-top: 45px;
+    }
+}
+
+.card1 {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background-color: rgb(230, 154, 12);
+}
+
+.viber {
+    background-color: rgb(115, 096, 242);
+    color: white;
+}
+
+.phone {
+    background-color: rgb(60, 160, 100);
+    color: white;
+}
