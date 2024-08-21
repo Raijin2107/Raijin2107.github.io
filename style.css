@@ -1,8 +1,30 @@
 html {
     scroll-behavior: smooth;
 }
+
+body {
+    background-color: white;
+    color: black;
+}
+
+:root {
+    --card-bg-color: rgb(245, 245, 245); /* Light mode background color */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+    }
+
+    :root {
+        --card-bg-color: #252525; /* Dark mode background color */
+    }
+}
+
 .brand-color {
-    color: rgb(255,144,63);
+    color: rgb(255, 144, 63);
 }
 img {
     height: 100%;
@@ -16,19 +38,12 @@ img {
 }
 
 body {
-    padding-top: 81.6px;
+    padding-top: 50px;
 }
 
-@media (min-width: 231px) {
-body {
-    padding-top: 66px;
-    }
-}
-
-
-@media (min-width: 360px) {
+@media (min-width: 264px) {
     body {
-        padding-top: 45px;
+        padding-top: 50px;
     }
 }
 
@@ -36,7 +51,7 @@ body {
     width: auto;
     height: auto;
     border-radius: 10px;
-    background-color: rgb(230, 154, 12);
+    background-color: var(--card-bg-color);
 }
 
 .viber {
