@@ -110,7 +110,7 @@ body {
 
 /* Initially show only 3 rows */
 .thumbnails.collapsed {
-    max-height: 360px; /* Adjust based on thumbnail height and padding */
+    max-height: 300px; /* Adjust based on thumbnail height and padding */
 }
 
 /* Show all thumbnails when expanded */
