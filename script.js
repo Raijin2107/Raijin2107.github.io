@@ -29,7 +29,7 @@ function toggleGallery() {
     if (isExpanded) {
         thumbnailContainer.classList.remove('expanded');
         thumbnailContainer.classList.add('collapsed');
-        toggleButton.textContent = 'Show All';
+        toggleButton.textContent = 'See More';
     } else {
         thumbnailContainer.classList.remove('collapsed');
         thumbnailContainer.classList.add('expanded');
