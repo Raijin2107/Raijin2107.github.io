@@ -39,6 +39,13 @@ function changeImage(direction) {
     document.getElementById('popupImage').src = images[currentIndex];
 }
 
+function preloadNextImage() {
+    // Preload the next image
+    const nextIndex = (currentIndex + 1) % fullSizeImages.length;
+    const img = new Image();
+    img.src = fullSizeImages[nextIndex];
+}
+
 window.onclick = function(event) {
     const popup = document.getElementById('imagePopup');
     if (event.target === popup) {
