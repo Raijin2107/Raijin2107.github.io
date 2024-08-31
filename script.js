@@ -8,7 +8,9 @@ for (let i = 1; i <= 74; i++) {
 }
 
 const thumbnailContainer = document.getElementById('thumbnails');
+const toggleButton = document.getElementById('toggleButton');
 let currentIndex = 0;
+let isExpanded = false;
 
 thumbnails.forEach((thumbnail, index) => {
     const img = document.createElement('img');
@@ -19,6 +21,22 @@ thumbnails.forEach((thumbnail, index) => {
     img.onclick = () => openPopup(index);
     thumbnailContainer.appendChild(img);
 });
+
+// Initial state to show only 3 rows
+thumbnailContainer.classList.add('collapsed');
+
+function toggleGallery() {
+    if (isExpanded) {
+        thumbnailContainer.classList.remove('expanded');
+        thumbnailContainer.classList.add('collapsed');
+        toggleButton.textContent = 'Show All';
+    } else {
+        thumbnailContainer.classList.remove('collapsed');
+        thumbnailContainer.classList.add('expanded');
+        toggleButton.textContent = 'Show Less';
+    }
+    isExpanded = !isExpanded;
+}
 
 function openPopup(index) {
     currentIndex = index;
@@ -53,3 +71,7 @@ window.onclick = function(event) {
         closePopup();
     }
 }
+
+
+
+toggleButton.onclick = toggleGallery;
