@@ -15,6 +15,7 @@ thumbnails.forEach((thumbnail, index) => {
     img.src = thumbnail;
     img.alt = `Image ${index + 1}`;
     img.classList.add('thumbnail');
+    img.loading = "lazy"
     img.onclick = () => openPopup(index);
     thumbnailContainer.appendChild(img);
 });
