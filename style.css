@@ -7,6 +7,13 @@ body {
     color: black;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 :root {
     --card-bg-color: rgb(245, 245, 245); /* Light mode background color */
 }
@@ -26,17 +33,13 @@ body {
 .brand-color {
     color: rgb(255, 144, 63);
 }
-img {
-    height: 100%;
-    width: 100%;;
-    object-fit: cover;
-}
 .carousel-inner img {
     width: 100%;
     aspect-ratio: 4 / 3; /* Replace with your desired ratio */
     object-fit: cover; /* Ensure the image covers the area */
 }
 
+/*
 body {
     padding-top: 50px;
 }
@@ -46,7 +49,7 @@ body {
         padding-top: 50px;
     }
 }
-
+*/
 .card1 {
     width: auto;
     height: auto;
@@ -59,7 +62,138 @@ body {
     color: white;
 }
 
+.viber:hover {
+    background-color: rgb(86, 69, 179);
+}
+
 .phone {
     background-color: rgb(60, 160, 100);
     color: white;
+}
+
+.phone:hover {
+    background-color: rgb(38, 110, 67);
+}
+
+/* Gallery container */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Thumbnails styling */
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    max-width: 1000px; /* Set a maximum width to limit the gallery size */
+    margin: auto;
+    
+}
+
+.thumbnails img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+/* Popup styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 50px; /* Adjust width to increase the clickable area */
+    height: 50px; /* Adjust height to increase the clickable area */
+    line-height: 50px; /* Vertically center the "×" */
+    text-align: center; /* Horizontally center the "×" */
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #fff;
+    background-color: rgba(10,10,10);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .close {
+        font-size: 40px;
+    }
+
+    .prev, .next {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .thumbnails img {
+        width: 100px;
+        height: 100px;
+    }
 }
