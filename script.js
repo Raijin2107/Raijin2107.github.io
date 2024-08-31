@@ -56,13 +56,14 @@ function changeImage(direction) {
         currentIndex = 0;
     }
     document.getElementById('popupImage').src = images[currentIndex];
+    preloadNextImage(); // Optionally preload the next image
 }
 
 function preloadNextImage() {
     // Preload the next image
-    const nextIndex = (currentIndex + 1) % fullSizeImages.length;
+    const nextIndex = (currentIndex + 1) % images.length;
     const img = new Image();
-    img.src = fullSizeImages[nextIndex];
+    img.src = images[nextIndex];
 }
 
 window.onclick = function(event) {
