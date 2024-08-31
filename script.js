@@ -4,7 +4,7 @@ const thumbnails = [];
 const images = [];
 for (let i = 1; i <= 74; i++) {
     thumbnails.push(`src/thumbnails/ကိုကျော်ကားအငှားဝန်ဆောင်မှုsmall (${i}).webp`);
-    images.push(`src/services/ကိုကျော်ကားအငှားဝန်ဆောင်မှု (${i}).png`);
+    images.push(`src/services/ကိုကျော်ကားအငှားဝန်ဆောင်မှု (${i}).webp`);
 }
 
 const thumbnailContainer = document.getElementById('thumbnails');
