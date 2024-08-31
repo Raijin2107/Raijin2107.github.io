@@ -33,7 +33,7 @@ function toggleGallery() {
     } else {
         thumbnailContainer.classList.remove('collapsed');
         thumbnailContainer.classList.add('expanded');
-        toggleButton.textContent = 'Show Less';
+        toggleButton.textContent = 'See Less';
     }
     isExpanded = !isExpanded;
 }
