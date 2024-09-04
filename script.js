@@ -1,5 +1,3 @@
-// script.js
-
 const thumbnails = [];
 const images = [];
 for (let i = 1; i <= 74; i++) {
@@ -66,6 +64,31 @@ function preloadNextImage() {
     img.src = images[nextIndex];
 }
 
+// Variables for swipe detection
+let startX = 0;
+let endX = 0;
+
+const popupImage = document.getElementById('popupImage');
+
+// Detect touch start
+popupImage.addEventListener('touchstart', function(event) {
+    startX = event.touches[0].clientX;
+}, false);
+
+// Detect touch move
+popupImage.addEventListener('touchmove', function(event) {
+    endX = event.touches[0].clientX;
+}, false);
+
+// Detect touch end and determine swipe direction
+popupImage.addEventListener('touchend', function() {
+    if (endX < startX) {
+        changeImage(1); // Swipe left, show next image
+    } else if (endX > startX) {
+        changeImage(-1); // Swipe right, show previous image
+    }
+}, false);
+
 window.onclick = function(event) {
     const popup = document.getElementById('imagePopup');
     if (event.target === popup) {
@@ -73,6 +96,5 @@ window.onclick = function(event) {
     }
 }
 
-
-
 toggleButton.onclick = toggleGallery;
+
